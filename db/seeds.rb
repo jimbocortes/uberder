@@ -3,5 +3,17 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+type = ["Studio", "Apartment", "Condo", "Room"]
+price = [2000, 2500, 3000, 3500, 4000]
+
+5.times do |i|
+  Property.create(
+    price: price[Random.rand(4)],
+    type:  type[Random.rand(4)],
+    city: "Cebu", 
+    bathrooms: Random.rand(2) + 1,
+    bedrooms: Random.rand(2) + 1,
+    address: "Lahug",
+    description: "Lorem Ipsom dolor sit amet.")
+end
