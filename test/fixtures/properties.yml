@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  city: MyString
+  address: MyString
+  price: 9.99
+  bathrooms: 1
+  bedrooms: 1
+  description: MyText
+
+two:
+  type: 
+  city: MyString
+  address: MyString
+  price: 9.99
+  bathrooms: 1
+  bedrooms: 1
+  description: MyText
