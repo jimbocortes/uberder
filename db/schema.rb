@@ -11,6 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150130124706) do
+
+  create_table "properties", force: :cascade do |t|
+    t.string   "type",        limit: 255
+    t.string   "city",        limit: 255
+    t.string   "address",     limit: 255
+    t.decimal  "price",                     precision: 10
+    t.integer  "bathrooms",   limit: 4
+    t.integer  "bedrooms",    limit: 4
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
 
 end
