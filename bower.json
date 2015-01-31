@@ -1,0 +1,6 @@
+{
+  "name": "knacss",
+  "dependencies": {
+    "knacss": "*"
+  }
+}

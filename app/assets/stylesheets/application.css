@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bower_components/sass/knacss
+ *= require knacss/sass/knacss
  *= require_tree .
  *= require_self
  */
