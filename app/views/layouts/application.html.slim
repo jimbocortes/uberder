@@ -27,9 +27,7 @@ html lang="en"
           div id="navbar" class="navbar-collapse collapse" 
               ul class="nav navbar-nav navbar-right"
                 li class="list_property"
-                  a href="../navbar-static-top/"
-                    span List Property
-                
+                  = link_to "List Property", new_property_path
     #content
       = yield
       
