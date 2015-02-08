@@ -1,0 +1,46 @@
+= form_for @property, html: {class: "form-horizontal" } do |f|
+  .form-group
+    = f.label :type, class: "col-sm-2 control-label"
+      = "Type"
+    .col-sm-10
+      = f.select(:type, Property::TYPES, {}, { class: "form-control" })
+
+  .form-group
+    = f.label :city, class: "col-sm-2 control-label"
+      = "City"
+    .col-sm-10
+      = f.select(:type, Property::CITIES, {}, { class: "form-control" })
+
+  .form-group
+    = f.label :address, class: "col-sm-2 control-label"
+      = "Address"
+    .col-sm-10
+      = f.text_field(:address, class: "form-control")
+
+  .form-group
+    = f.label :price, class: "col-sm-2 control-label"
+      = "Price"
+    .col-sm-10
+      = f.text_field(:address, class: "form-control")     
+
+  .form-group
+    = f.label :bedrooms, class: "col-sm-2 control-label"
+      = "Bedrooms"
+    .col-sm-10
+      = f.select(:type, Property::BEDROOMS, {}, { class: "form-control" })
+
+  .form-group
+    = f.label :bathrooms, class: "col-sm-2 control-label"
+      = "Bathrooms"
+    .col-sm-10
+      = f.select(:type, Property::BATHROOMS, {}, { class: "form-control" })
+  
+  .form-group
+    = f.label :description, class: "col-sm-2 control-label"
+      = "Highlights"
+    .col-sm-10
+      = f.text_area(:description, class: "form-control")
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit class: "btn btn-default"
