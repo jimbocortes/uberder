@@ -1,6 +1,8 @@
 class Property < ActiveRecord::Base
   self.inheritance_column = "kind"
 
+  mount_uploaders :photos, ImageUploader
+
   TYPES = %w| Apartment Room Condo House | 
   
   CITIES =["Cebu City",
