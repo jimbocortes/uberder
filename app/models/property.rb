@@ -1,3 +1,5 @@
+require 'carrierwave/orm/activerecord'
+
 class Property < ActiveRecord::Base
   self.inheritance_column = "kind"
 

@@ -16,7 +16,7 @@
 
   .form-group
     = f.label :address, class: "col-sm-2 control-label"
-      = "Address"
+      = "Address" 
     .col-sm-10
       = f.text_field(:address, class: "form-control")
 
@@ -45,9 +45,10 @@
       = f.text_area(:description, class: "form-control")
   
   .form-group
-    h4 class="col-sm-2" PHOTOS:
-
-    
+    = f.label :photos, class: "col-sm-2 control-label"
+      = "Photos"
+    .col-sm-10
+      = f.file_field :photos, multiple: true 
 
   .form-group
     .col-sm-offset-2.col-sm-10
