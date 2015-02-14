@@ -1,5 +1,4 @@
-
-= form_for @property, html: {class: "form-horizontal" } do |f|
+= form_for @property, html: { multipart: true, class: "form-horizontal" } do |f|
   .form-group
     h4 class="col-sm-2" DETAILS: 
   .form-group
@@ -50,6 +49,18 @@
     .col-sm-10
       = f.file_field :photos, multiple: true 
 
+    .col-sm-10
+      .row style="margin-top: 10px"
+        - @property.photos.each do |p|
+          .col-xs-6.col-md-3
+            .thumbnail
+              = link_to image_tag(p.versions[:thumb].url)
+              .caption style="text-align: center"
+                button type="button" class="btn btn-default btn-xs"
+                  span class="glyphicon glyphicon-remove" aria-hidden="true" 
+                  = " Remove"
+    
+                
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit class: "btn btn-primary"
