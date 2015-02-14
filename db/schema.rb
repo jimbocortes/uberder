@@ -13,22 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20150130132851) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "photos", force: :cascade do |t|
-    t.string   "image",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "properties", force: :cascade do |t|
-    t.string   "type",        limit: 255
-    t.string   "city",        limit: 255
-    t.string   "address",     limit: 255
-    t.decimal  "price",                     precision: 10
-    t.integer  "bathrooms",   limit: 4
-    t.integer  "bedrooms",    limit: 4
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.string   "type"
+    t.string   "city"
+    t.string   "address"
+    t.decimal  "price"
+    t.integer  "bathrooms"
+    t.integer  "bedrooms"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
