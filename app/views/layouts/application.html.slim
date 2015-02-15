@@ -30,5 +30,10 @@ html lang="en"
                   = link_to "List Property", new_property_path
     
     #content
+       p class="notice"
+        = notice
+       p class="alert"
+        = alert 
+      
       = yield
       

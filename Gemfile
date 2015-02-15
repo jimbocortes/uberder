@@ -14,6 +14,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', branch: 'master'
 gem 'slim'
 gem 'mini_magick'
 gem 'awesome_print'
+gem 'devise'
+gem 'omniauth'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
