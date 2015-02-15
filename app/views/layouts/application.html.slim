@@ -30,10 +30,12 @@ html lang="en"
                   li
                     = link_to "Sign out", destroy_user_session_path(@current_user), method: :delete
                 - else
+                  li class="list_property" 
+                    = link_to "POST A PROPERTY", new_property_path
+
                   li
-                    = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
-                li class="list_property"
-                  = link_to "List Property", new_property_path
+                    = link_to "JOIN", user_omniauth_authorize_path(:facebook)
+                  
     
     #content
       = yield
