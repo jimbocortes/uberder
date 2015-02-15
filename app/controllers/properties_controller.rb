@@ -28,12 +28,7 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
-        params[:property][:photos].each do |p|
-          photo = @property.photos.new
-          photo.file = p 
-          photo.save
-        end
-        
+        add_photos
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
         format.json { render :show, status: :created, location: @property }
       else
@@ -49,8 +44,7 @@ class PropertiesController < ApplicationController
     
     respond_to do |format|
       if @property.update(property_params)
-        @property.photos << params[:photos]
-        @property.save
+        add_photos
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
         format.json { render :show, status: :ok, location: @property }
       else
@@ -71,6 +65,17 @@ class PropertiesController < ApplicationController
   end
 
   private
+
+    def add_photos 
+      if params[:property][:photos]
+          params[:property][:photos].each do |p|
+            photo = @property.photos.new
+            photo.file = p 
+            photo.save
+          end
+        end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_property
       @property = Property.find(params[:id])

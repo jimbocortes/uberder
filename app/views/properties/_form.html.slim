@@ -52,7 +52,7 @@
     .col-sm-10
       .row style="margin-top: 10px"
         - @property.photos.each do |p|
-          .col-xs-6.col-md-3
+          .col-xs-6.col-md-3 id=("photo_#{p.id}")
             .thumbnail
               = link_to image_tag(p.file.versions[:thumb].url)
               .caption style="text-align: center"
