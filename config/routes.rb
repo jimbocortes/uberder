@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  root 'welcome#index'
+  
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  
   resources :properties
   resources :photos
-
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   
-  root 'welcome#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
