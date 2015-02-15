@@ -1,0 +1,1 @@
+FB_CONFIG = YAML.load_file("#{Rails.root}/config/facebook.yml").with_indifferent_access[Rails.env]
