@@ -40,8 +40,12 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update
+    
     respond_to do |format|
-      if @property.update(property_params)
+      if @property.update(params.require(:property).permit(:type, :city, :address, :price, :bathrooms, :bedrooms, :description))
+        @property.photos << params[:photos]
+        @property.save
+        
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
         format.json { render :show, status: :ok, location: @property }
       else

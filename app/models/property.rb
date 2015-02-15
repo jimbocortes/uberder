@@ -2,9 +2,8 @@ require 'carrierwave/orm/activerecord'
 
 class Property < ActiveRecord::Base
   self.inheritance_column = "kind"
-
-  mount_uploaders :photos, ImageUploader
-
+  has_many :photos
+  
   TYPES = %w| Apartment Room Condo House | 
   
   CITIES =["Cebu City",

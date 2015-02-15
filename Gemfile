@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', branch: 'master'
 gem 'slim'
 gem 'mini_magick'
-
+gem 'awesome_print'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -23,6 +23,7 @@ gem 'mini_magick'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+  
 
 group :development, :test do
   gem 'byebug'
