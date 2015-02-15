@@ -56,9 +56,9 @@
             .thumbnail
               = link_to image_tag(p.file.versions[:thumb].url)
               .caption style="text-align: center"
-                button type="button" class="btn btn-default btn-xs"
+                = link_to photo_path(p), method: :delete, remote: true, authenticity_token: true, data: { confirm: "Are you sure?" },  class: "btn btn-default btn-xs", type: "button" do 
                   span class="glyphicon glyphicon-remove" aria-hidden="true" 
-                  = " Remove"
+                    = " Remove"
     
                 
   .form-group

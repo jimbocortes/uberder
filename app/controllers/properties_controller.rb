@@ -28,7 +28,6 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
-        Rails.logger.debug("========> #{params}")
         params[:property][:photos].each do |p|
           photo = @property.photos.new
           photo.file = p 
