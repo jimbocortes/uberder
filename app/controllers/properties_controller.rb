@@ -28,6 +28,13 @@ class PropertiesController < ApplicationController
 
     respond_to do |format|
       if @property.save
+        Rails.logger.debug("========> #{params}")
+        params[:property][:photos].each do |p|
+          photo = @property.photos.new
+          photo.file = p 
+          photo.save
+        end
+        
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
         format.json { render :show, status: :created, location: @property }
       else
@@ -42,10 +49,9 @@ class PropertiesController < ApplicationController
   def update
     
     respond_to do |format|
-      if @property.update(params.require(:property).permit(:type, :city, :address, :price, :bathrooms, :bedrooms, :description))
+      if @property.update(property_params)
         @property.photos << params[:photos]
         @property.save
-        
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
         format.json { render :show, status: :ok, location: @property }
       else
@@ -73,6 +79,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:type, :city, :address, :price, :bathrooms, :bedrooms, :description, photos: [])
+      params.require(:property).permit(:type, :city, :address, :price, :bathrooms, :bedrooms, :description)
     end
 end

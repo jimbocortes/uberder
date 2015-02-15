@@ -36,7 +36,7 @@
 </p>
 
 <% @property.photos.each do |x| %>
-<%= image_tag(x.versions[:thumb].url) %>  
+<%= image_tag(x.file.versions[:thumb].url) %>  
 <% end %>
 
 <%= link_to 'Edit', edit_property_path(@property) %> |

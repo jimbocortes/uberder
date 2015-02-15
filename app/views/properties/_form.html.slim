@@ -54,7 +54,7 @@
         - @property.photos.each do |p|
           .col-xs-6.col-md-3
             .thumbnail
-              = link_to image_tag(p.versions[:thumb].url)
+              = link_to image_tag(p.file.versions[:thumb].url)
               .caption style="text-align: center"
                 button type="button" class="btn btn-default btn-xs"
                   span class="glyphicon glyphicon-remove" aria-hidden="true" 
