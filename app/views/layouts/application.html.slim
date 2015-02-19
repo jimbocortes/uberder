@@ -28,7 +28,7 @@ html lang="en"
               ul class="nav navbar-nav navbar-right"
                 - if user_signed_in?
                   li
-                    = link_to "Sign out", destroy_user_session_path(@current_user), method: :delete
+                    = link_to "SIGN OUT", destroy_user_session_path(@current_user), method: :delete
                 - else
                   li class="list_property" 
                     = link_to "POST A PROPERTY", new_property_path

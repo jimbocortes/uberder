@@ -1,5 +1,4 @@
 class PropertiesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy, :new]
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   # GET /properties
@@ -15,7 +14,11 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new
+    if user_signed_in? 
+      @property = Property.new
+    else
+      redirect_to property_owner_welcome_index_path
+    end
   end
 
   # GET /properties/1/edit
