@@ -29,7 +29,7 @@ html lang="en"
                 - if user_signed_in?
                   li role="presentation" class="dropdown"
                     = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false" do 
-                      = image_tag current_user.avatar, class: "img-circle", style: "width: 27px;"
+                      = image_tag current_user.avatar, class: "img-circle", style: "width: 29px;border: 2px solid #eee;"
                       span style="margin: 0 10px;"
                         = "#{current_user.name}"
                       span class="caret"
