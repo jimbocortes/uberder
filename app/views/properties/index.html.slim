@@ -1,0 +1,20 @@
+#page
+  = render partial: "dashboard/menu"
+  h1 
+    = "My Properties"
+
+  div class="media"
+    - @properties.each do |p|
+      div class="media-left"
+        = link_to "#" do 
+          - thumb = p.photos.first
+          - url = thumb.file.versions[:thumb].url
+          = image_tag url, width: "64px", class: "media-object"
+      div class="media-body"
+        h4 class="media-heading" 
+          = "#{p.type} : #{p.address}"
+        p
+          = p.description
+   
+  = link_to 'New Property', new_property_path
+   

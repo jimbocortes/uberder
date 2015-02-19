@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   
+  get 'dashboard/index'
+
   root 'welcome#index'
   
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  
+  scope '/dashboard' do 
+    resources :properties
+  end
+  
+  resources :dashboard 
   resources :properties
   resources :photos
   

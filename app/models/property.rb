@@ -3,6 +3,7 @@ require 'carrierwave/orm/activerecord'
 class Property < ActiveRecord::Base
   self.inheritance_column = "kind"
   has_many :photos
+  belongs_to :user
   
   TYPES = %w| Apartment Room Condo House | 
   
