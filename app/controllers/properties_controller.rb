@@ -1,4 +1,4 @@
-class PropertiesController < ApplicationController
+ class PropertiesController < ApplicationController
   before_action :authenticate_user!, except: [:new]
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 

@@ -1,4 +1,10 @@
 #page 
   = render partial: "dashboard/menu"
   h1 class="title" New Property
+  
+  .pull-right  
+    div class="btn-group" role="group" aria-label="..."
+      = link_to "Back", :back, class: "btn btn-default", role: "button"
+  .clearfix
+
   = render 'form'

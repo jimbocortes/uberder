@@ -30,4 +30,8 @@ class Property < ActiveRecord::Base
     ["4+ BR", 4],
     ["Shared", -1],
   ]
+
+  def type_name
+    TYPES[self.type.to_i]
+  end
  end

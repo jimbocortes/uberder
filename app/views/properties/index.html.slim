@@ -1,7 +1,13 @@
 #page
   = render partial: "dashboard/menu"
-  h1 
+  h1 class="title" 
     = "My Properties"
+
+  .pull-right  
+    div class="btn-group" role="group" aria-label="..."
+      = link_to "Add Property", new_property_path, class: "btn btn-primary", role: "button"
+
+  .clearfix
 
   div class="media"
     - @properties.each do |p|
@@ -9,12 +15,11 @@
         = link_to "#" do 
           - thumb = p.photos.first
           - url = thumb.file.versions[:thumb].url
-          = image_tag url, width: "64px", class: "media-object"
+          = image_tag url, width: "100px", class: "media-object"
       div class="media-body"
         h4 class="media-heading" 
-          = "#{p.type} : #{p.address}"
+          = "#{p.type_name} in #{p.city}"
         p
           = p.description
-   
-  = link_to 'New Property', new_property_path
+
    
