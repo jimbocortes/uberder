@@ -26,6 +26,10 @@ html lang="en"
 
           div id="navbar" class="navbar-collapse collapse" 
               ul class="nav navbar-nav navbar-right"
+                li
+                  = link_to new_property_path do 
+                    span id="post-a-property-button" class="post-a-property btn btn-primary btn-sm"
+                      = "POST A PROPERTY"
                 - if user_signed_in?
                   li role="presentation" class="dropdown"
                     = link_to "#", class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false" do 
@@ -39,10 +43,11 @@ html lang="en"
                       li
                         = link_to "Sign Out", destroy_user_session_path(@current_user), method: :delete
                 - else
-                  li class="list_property" 
-                    = link_to "Post a property", new_property_path
+                  
                   li
-                    = link_to "Join", user_omniauth_authorize_path(:facebook)
+                    = link_to user_omniauth_authorize_path(:facebook) do 
+                      span class="btn btn- btn-sm" style="text-transform:uppercase;"
+                        = "Join"
     
     #content
       = content_for?(:dashboard_menu) ? yield(:dashboard_menu) : ""
