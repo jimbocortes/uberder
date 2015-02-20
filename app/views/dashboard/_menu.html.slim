@@ -8,7 +8,7 @@
 
         div id="navbar-dashboard" class="navbar-collapse collapse" 
           ul class="nav navbar-nav navbar-right"
-            li
+            li class=(nav_link_state("dashboard", "index"))
               = link_to "Dashboard", dashboard_index_path
-            li
+            li class=(nav_link_state("properties", "index"))
               = link_to "My Properties", properties_path

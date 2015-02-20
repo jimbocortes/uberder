@@ -4,7 +4,7 @@
     = "My Properties"
   
   - @properties.each do |p|
-    div class="media"
+    div id=("property_#{p.id}") class="media"
       div class="media-left"
         = link_to "#" do 
           - thumb = p.photos.first
@@ -15,8 +15,11 @@
           = "#{p.type_name} in #{p.city}"
         p
           = p.description.truncate(150)
+        = link_to "Delete", property_path(p), style: "margin: 0px 5px", method: :delete, remote: true, data: { confirm: "Are you sure?" }
+        = link_to "Manage", edit_property_path(p), style: "margin: 0px 5px"
+      
       div class="media-right  media-middle"
-        = link_to "Manage", edit_property_path(p), class: "btn btn-default btn-sm"
+        
         
 
    
