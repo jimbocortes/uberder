@@ -5,7 +5,7 @@
   # GET /properties
   # GET /properties.json
   def index
-    @properties = current_user.properties
+    @properties = current_user.properties.order("updated_at desc")
   end
 
   # GET /properties/1
