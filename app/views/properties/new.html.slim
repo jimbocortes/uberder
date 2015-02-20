@@ -1,5 +1,6 @@
-#page 
-  = render partial: "dashboard/menu"
+#page
   h1 class="title" New Property
-  
-  = render 'form'
+  = render partial: "dashboard/menu"
+
+  #page-content
+    = render 'form'
