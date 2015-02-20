@@ -2,15 +2,9 @@
   = render partial: "dashboard/menu"
   h1 class="title" 
     = "My Properties"
-
-  .pull-right  
-    div class="btn-group" role="group" aria-label="..."
-      = link_to "Add Property", new_property_path, class: "btn btn-primary", role: "button"
-
-  .clearfix
-
-  div class="media"
-    - @properties.each do |p|
+  
+  - @properties.each do |p|
+    div class="media"
       div class="media-left"
         = link_to "#" do 
           - thumb = p.photos.first
@@ -20,6 +14,9 @@
         h4 class="media-heading" 
           = "#{p.type_name} in #{p.city}"
         p
-          = p.description
+          = p.description.truncate(150)
+      div class="media-right  media-middle"
+        = link_to "Manage", edit_property_path(p), class: "btn btn-default btn-sm"
+        
 
    
