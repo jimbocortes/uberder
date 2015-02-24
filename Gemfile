@@ -20,10 +20,15 @@ gem 'omniauth-facebook'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
+gem 'unicorn', '~> 4.8.3'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+group :development do 
+  gem 'capistrano', '~> 3.3.5'
+  gem 'capistrano-rails', '~> 1.1.2'
+  gem 'capistrano-bundler', '~> 1.1.4'
+  gem 'capistrano-rbenv', '~> 2.0.3'
+end
 
   
 
