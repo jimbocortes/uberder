@@ -52,4 +52,5 @@ set :ssh_options, {
     auth_methods: %w(password),
     password: 'jY9bvrF0Pc',
     user: 'deployer',
+    port: 23523
 }
