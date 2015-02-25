@@ -18,7 +18,7 @@ role :db,  %w{deployer@128.199.233.173}
 set :stage, :production
 set :rails_env, :production
 
-server '128.199.233.173', user: 'deployer', port: 23523, roles: %w{web}
+server '128.199.233.173', user: 'deployer', port: 23523, roles: %w{web app db}
 
 
 # Custom SSH Options
