@@ -49,8 +49,8 @@ server '128.199.233.173', user: 'deployer', port: 23523, roles: %w{web app db}, 
 
 set :ssh_options, {
     forward_agent: true,
-    auth_methods: %w(password),
-    password: 'jY9bvrF0Pc',
+    auth_methods: %w(publickey),
+    keys: %w(/Users/jimbo/.ssh/id_rsa),
     user: 'deployer',
     port: 23523
 }
