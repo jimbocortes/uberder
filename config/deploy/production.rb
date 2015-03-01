@@ -4,9 +4,9 @@
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{deployer@128.199.233.173}
-# role :web, %w{deployer@128.199.233.173}
-# role :db,  %w{deployer@128.199.233.173}
+role :app, %w{jimbo@128.199.147.93}
+role :web, %w{jimbo@128.199.147.93}
+role :db, %w{jimbo@128.199.147.93}
 
 
 # Extended Server Syntax
@@ -18,7 +18,7 @@ role :app, %w{deployer@128.199.233.173}
 set :stage, :production
 set :rails_env, :production
 
-server '128.199.233.173', user: 'deployer', port: 23523, roles: %w{app}, primary: true
+server '128.199.147.93', user: 'jimbo', port: 21211, roles: %w{web app db}, primary: true
 
 
 # Custom SSH Options
@@ -46,11 +46,3 @@ server '128.199.233.173', user: 'deployer', port: 23523, roles: %w{app}, primary
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-
-set :ssh_options, {
-    forward_agent: true,
-    auth_methods: %w(publickey),
-    keys: %w(/Users/jimbo/.ssh/id_rsa),
-    user: 'deployer',
-    port: 23523
-}
