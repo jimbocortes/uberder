@@ -18,7 +18,11 @@ role :db, %w{jimbo@128.199.147.93}
 set :stage, :production
 set :rails_env, :production
 
-server '128.199.147.93', user: 'jimbo', port: 21211, roles: %w{web app db}, primary: true
+server '128.199.147.93', user: 'jimbo', port: 23523, roles: %w{web app db}
+
+set :ssh_options, {
+  port: 23523
+}
 
 
 # Custom SSH Options
